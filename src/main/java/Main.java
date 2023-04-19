@@ -1,3 +1,5 @@
+import exceptions.WrongLoginException;
+import exceptions.WrongPasswordException;
 import service.AccountService;
 import service.AccountServiceImpl;
 
@@ -10,7 +12,14 @@ public class Main {
         String login= scanner.nextLine();
         String password = scanner.nextLine();
         String confirmPassword = scanner.nextLine();
-        System.out.println("результат "+ accountService.checkAccountSets(login, password, confirmPassword));
+        try {
+
+            System.out.println("результат "+ accountService.checkAccountSets(login, password, confirmPassword));
+        }catch (WrongPasswordException e) {
+            System.out.println(e.getMessage());
+        }catch (WrongLoginException e) {
+            System.out.println(e.getMessage());
+        }
 
     }
 }
