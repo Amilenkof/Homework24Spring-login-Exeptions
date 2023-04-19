@@ -24,9 +24,11 @@ public class ControllerAccount {
             return accountService.checkAccountSets(login, password, confirmPassword);
         } catch (WrongLoginException e) {
             System.out.println(e.getMessage());
+            System.out.println("e.getStackTrace() = " + e.getStackTrace());
             return false;
         } catch (WrongPasswordException e) {
             System.out.println(e.getMessage());
+            System.out.println("e.getStackTrace() = " + e.getStackTrace());
             return false;
         }
 
