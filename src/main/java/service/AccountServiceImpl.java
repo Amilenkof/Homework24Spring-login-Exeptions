@@ -1,10 +1,8 @@
-package com.account.homework24.service;
+package service;
 
 import exceptions.WrongLoginException;
 import exceptions.WrongPasswordException;
-import org.springframework.stereotype.Service;
 
-@Service
 public class AccountServiceImpl implements AccountService {
 
     @Override
